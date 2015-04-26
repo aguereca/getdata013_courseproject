@@ -28,7 +28,9 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 1. Set as working directory the root of this project. (```setwd("~/coursera/getdata013_courseproject")```)
 2. Download data source into root of project, a folder named ```UCI HAR Dataset``` will be created:
+
 ```download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip','raw-data.zip', method='curl')```
+
 ```unzip('raw-data.zip')```
 3. [R Script](run_analysis.R) can be executed in R by running ```source("run_analysis.R")```
 4. A file named ```uci-har-tidy.txt``` will be generated containing our tidy dataset

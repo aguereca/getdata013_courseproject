@@ -68,7 +68,7 @@ train_dataset <- cbind(as.data.table(subject_train), y_train, x_train)
 
 #
 # Objective 1: Merges the training and the test sets to create one data set.
-merged_dataset <- rbind(test_dataset, train_dataset, fill=TRUE)
+merged_dataset <- rbind(test_dataset, train_dataset)
 # Objective 4: Appropriately labels the data set with descriptive variable names.
 id_labels <- c("subject", "Activity_ID", "Activity_Label")
 var_labels <- setdiff(colnames(merged_dataset), id_labels)
@@ -79,4 +79,4 @@ melted_dataset <- melt(data, id=id_labels, measure.vars=var_labels)
 tidy_dataset <- dcast(melted_dataset, subject + Activity_Label ~ variable, mean)
 
 # Writes expected file on disk
-write.table(tidy_dataset, file = "./uci_har_tidy.txt")
+write.table(tidy_dataset, file = "./uci_har_tidy.txt", row.name=FALSE)
